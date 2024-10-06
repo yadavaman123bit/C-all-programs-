@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+   int p,q,area,perimeter;
+   
+   cout<<"\n Enter lenght of rectangle. "<<endl;
+   
+   cin>>p;
+   
+   if(cin.fail()){
+        
+        cout<<"\n Enter valid lenght or in positive. "<<endl;
+        
+   return 1;
+        
+    }else if(p<0){
+        
+           cout<<"\n Enter lenght of rectangle bigger than 0."<<endl;
+           return 1;
+        
+    }
+    
+    cout<<"\n Enter width of rectangle. "<<endl;
+        
+        cin>>q;
+        
+        
+         if(cin.fail()){
+            
+            cout<<"\n Enter valid width of rectanglr. "<<endl;
+            
+            return 1;
+            
+        } else if (q<0){
+             
+             cout<<"\n Enter width of rectangle biigr thaan 0. "<<endl;
+            return 1;
+        }
+
+              area=p*q;
+              
+              perimeter=2*(p+q);
+              
+              cout<<"\n Area of rectangle is: "<<area<<endl;
+              
+              cout<<"\n perimeter of rectangle is: "<<perimeter<<endl;
+
+
+
+
+
+}
