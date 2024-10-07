@@ -1,96 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neon Button</title>
-    
-    <style type="text/css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snake Game</title>
+  <style type="text/css">
     body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-    font-family: sans-serif;
-}
-    
-    .neon-button {
-    background: none;
-    border: 2px solid transparent;
-    color: white;
-    padding: 15px 30px;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: 0.5s;
-    position: relative;
-    z-index: 0;
-}
+      display: grid;
+      grid-template-areas:
+        "left1 . box1 . right1"
+        "left2 box2 box3 box4 right2"
+        "left3 . box5 . right3";
+      height: 100vh;
+      margin: 0;
+      justify-items: center;
+      align-items: center;
+    }
 
-.neon-button:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, #00ffcc, #00ccff);
-    z-index: -1;
-    filter: blur(5px);
-    opacity: 0.7;
-    transition: 0.5s;
-}
+    .box {
+      width: 200px;
+      height: 200px;
+      animation: ani 2.5s linear infinite;
+    }
 
-.neon-button:hover:before {
-    background: linear-gradient(45deg, #00ff00, #00cc00);
-    filter: blur(10px);
-    opacity: 1;
-}
+    .box1 {
+      background-color: green;
+      grid-area: box1;
+    }
 
-    
-    
-       .neon-hover {
-    background: none;
-    border: 2px solid transparent;
-    color: white;
-    padding: 15px 30px;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: 0.5s;
-    position: relative;
-    z-index: 0;
-}
+    .box2 {
+      background-color: blue;
+      grid-area: box2;
+    }
 
-.neon-hover:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, #00ffcc, #00ccff);
-    z-index: -1;
-    filter: blur(5px);
-    opacity: 0.7;
-    transition: 0.5s;
-}
+    .box3 {
+      background-color: red;
+      grid-area: box3;
+    }
 
-.neon-hover:hover:before {
-    background: linear-gradient(45deg, #00ff00, #00cc00);
-    filter: blur(10px);
-    opacity: 1;
-}
-    </style>
+    .box4 {
+      background-color: yellow;
+      grid-area: box4;
+    }
+
+    .box5 {
+      background-color: purple;
+      grid-area: box5;
+    }
+
+    .left1, .left2, .left3, .right1, .right2, .right3 {
+      animation: ani 2.5s linear infinite;
+    }
+
+    .left1 { background-color: orange; grid-area: left1; }
+    .left2 { background-color: pink; grid-area: left2; }
+    .left3 { background-color: cyan; grid-area: left3; }
+    .right1 { background-color: lime; grid-area: right1; }
+    .right2 { background-color: magenta; grid-area: right2; }
+    .right3 { background-color: teal; grid-area: right3; }
+
+    @keyframes ani {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 <body>
-    <a href="#" class="neon-hover">Neon Button</a>
+  <div class="box left1"></div>
+  <div class="box left2"></div>
+  <div class="box left3"></div>
+  <div class="box box1"></div>
+  <div class="box box2"></div>
+  <div class="box box3"></div>
+  <div class="box box4"></div>
+  <div class="box box5"></div>
+  <div class="box right1"></div>
+  <div class="box right2"></div>
+  <div class="box right3"></div>
 </body>
 </html>
-                                
